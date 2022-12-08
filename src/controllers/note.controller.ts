@@ -1,11 +1,11 @@
+import { INote } from "@/models/note.model";
 import validationMiddleware from "@/middleware/validation.middleware";
-import NoteService from "@/resources/note/note.service";
-import validate from "@/resources/note/note.validation";
+import NoteService from "@/services/note.service";
 import HttpException from "@/utils/exceptions/http.exception";
 import Controller from "@/utils/interfaces/controller.interface";
 import { NextFunction, Request, Response, Router } from "express";
 import { UpdateQuery } from "mongoose";
-import INote from "./note.interface";
+import validate from "@/validation/note.validation";
 
 class NoteController implements Controller {
     public path = "/notes";

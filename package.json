@@ -40,9 +40,12 @@
         "typescript": "4.9.3"
     },
     "_moduleAliases": {
-        "@/resources": "dist/resources",
         "@/utils": "dist/utils",
         "@/middleware": "dist/middleware",
-        "@/config": "dist/config"
+        "@/config": "dist/config",
+        "@/controllers": "dist/controllers",
+        "@/models": "dist/models",
+        "@/services": "dist/services",
+        "@/validation": "dist/validation"
     }
 }

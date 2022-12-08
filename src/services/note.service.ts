@@ -1,5 +1,4 @@
-import NoteModel from "@/resources/note/note.model";
-import INote from "@/resources/note/note.interface";
+import NoteModel, { INote } from "@/models/note.model";
 import { UpdateQuery } from "mongoose";
 
 class NoteService {

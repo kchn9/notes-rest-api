@@ -1,5 +1,9 @@
-import { Schema, model } from "mongoose";
-import INote from "@/resources/note/note.interface";
+import { model, Schema, Document } from "mongoose";
+
+export interface INote extends Document {
+    title: string;
+    body: string;
+}
 
 const NoteSchema = new Schema(
     {
