@@ -1,11 +1,8 @@
-import "dotenv/config";
 import "module-alias/register";
 import App from "./app";
 import NoteController from "./resources/note/note.controller";
-import validateEnv from "@/utils/validateEnv";
+import config from "@/config/config";
 
-validateEnv();
-
-const app = new App([new NoteController()], Number(process.env.PORT));
+const app = new App([new NoteController()], Number(config.server.port));
 
 app.listen();

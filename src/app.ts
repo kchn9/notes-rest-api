@@ -1,11 +1,12 @@
+import config from "@/config/config";
 import errorMiddleware from "@/middleware/error.middleware";
-import loggingMiddleware from "./middleware/logger.middleware";
 import Controller from "@/utils/interfaces/controller.interface";
 import compression from "compression";
 import cors from "cors";
 import express, { Application } from "express";
 import helmet from "helmet";
 import mongoose from "mongoose";
+import loggingMiddleware from "./middleware/logger.middleware";
 
 class App {
     public express: Application;
@@ -22,9 +23,8 @@ class App {
     }
 
     private initializeDatabaseConnection(): void {
-        const { MONGO_USER, MONGO_PASSWORD, MONGO_HOST } = process.env;
         mongoose.connect(
-            `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}`
+            `mongodb+srv://${config.mongo.username}:${config.mongo.password}@${config.mongo.url}`
         );
     }
 
