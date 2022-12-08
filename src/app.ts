@@ -1,11 +1,11 @@
 import errorMiddleware from "@/middleware/error.middleware";
+import loggingMiddleware from "./middleware/logger.middleware";
 import Controller from "@/utils/interfaces/controller.interface";
 import compression from "compression";
 import cors from "cors";
 import express, { Application } from "express";
 import helmet from "helmet";
 import mongoose from "mongoose";
-import pino from "pino-http";
 
 class App {
     public express: Application;
@@ -31,7 +31,7 @@ class App {
     private initializeMiddleware(): void {
         this.express.use(helmet());
         this.express.use(cors());
-        this.express.use(pino());
+        this.express.use(loggingMiddleware());
         this.express.use(express.json());
         this.express.use(express.urlencoded({ extended: false }));
         this.express.use(compression());
