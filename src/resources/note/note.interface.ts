@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
-export default interface Note extends Document {
+export default interface INote extends Document {
     title: string;
     body: string;
 }
